@@ -20,7 +20,6 @@ bakcend/__pycache__/
 backend/*.py[cod]
 backend/*$py.class
 backend/.backend
-backend/data/
 backend/chroma/
 backend/chat_service.log
 
