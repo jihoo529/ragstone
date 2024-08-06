@@ -4,7 +4,7 @@ db = db.getSiblingDB('ragstone');
 db.createCollection('users');
 db.users.insertOne({
   username: "admin",
-  hashed_password: "$2b$12$divoCBTGayIj/K7SsvwGyeLDn1dfmXgh5HySTsJo5fjQVxAQX1rua" // Hashed value of "Eqix1998@"
+  hashed_password: "$2b$12$yuQ7oasRxFkaNtpsuu1TOOxmOc7.lSebAtoO4evzvWFviGe0iziR6" // Hashed value of "Password123@$", you MUST change this password after first login
 });
 
 // Create populated_files collection
