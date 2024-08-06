@@ -1,0 +1,27 @@
+.env
+
+__pycache__/
+*/__pycache__/
+*/*/__pycache__/
+*/*/*/__pycache__/
+*/*/*/*/__pycache__/
+*/*/*/*/*/__pycache__/
+*/*/*/*/*/*/__pycache__/
+*.py[cod]
+*$py.class
+
+# Frontend specific
+frontend/node_modules/
+frontend/dist/
+frontend/npm-debug.log
+frontend/yarn-error.log
+
+bakcend/__pycache__/
+backend/*.py[cod]
+backend/*$py.class
+backend/.backend
+backend/data/
+backend/chroma/
+backend/chat_service.log
+
+
