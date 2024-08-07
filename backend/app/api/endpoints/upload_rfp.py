@@ -1,27 +1,15 @@
-from fastapi import APIRouter, File, UploadFile, Form, HTTPException, Depends
-from fastapi.responses import JSONResponse, FileResponse, StreamingResponse
-import io
+from fastapi import APIRouter, File, UploadFile, HTTPException, Depends
+from fastapi.responses import FileResponse, StreamingResponse
 import os
-import shutil
-import pandas as pd
 from typing import List
-from pathlib import Path
 from app.services.chat_service import ChatService, get_chat_service
 from app.services.rfp_service import RFPService
 import json
 import asyncio
-
-router = APIRouter()
-
-# UPLOAD_DIR = "../../../tmp/"
-
-# Ensure the upload directory exists
-
-
 import logging
 
+router = APIRouter()
 logger = logging.getLogger(__name__)
-
 
 @router.post("/upload-rfp/{category}")
 async def upload_rfp(category: str, files: List[UploadFile] = File(...), chat_service: ChatService = Depends(get_chat_service)):

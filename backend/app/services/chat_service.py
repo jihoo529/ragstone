@@ -6,13 +6,10 @@ from langchain_community.vectorstores.chroma import Chroma
 from langchain.prompts import ChatPromptTemplate
 from langchain_community.llms.ollama import Ollama
 from .chromadb.get_embedding import get_embedding_function
-from concurrent.futures import ProcessPoolExecutor
 import os
 import asyncio
-from typing import List, Dict, Callable, Any
+from typing import Dict
 import logging
-import traceback
-import functools
 import pymongo
 
 # Consider moving these to a config file
@@ -75,9 +72,9 @@ class ChatService:
         self.db = self.client[DB_NAME]
         self.collection = self.db[COLLECTION_NAME]
 
-        model_name = self.collection.find_one({"model": {"$exists": True}}, {"_id": 0, "model": 1})["model"]
+        self.model_name = self.collection.find_one({"model": {"$exists": True}}, {"_id": 0, "model": 1})["model"]
         
-        self.model = Ollama(model=model_name, base_url=OLLAMA_BASE_URL)
+        self.model = Ollama(model=self.model_name, base_url=OLLAMA_BASE_URL)
         self.prompt_template = self.load_prompt_template()
 
         self.chroma_connections = {}
@@ -122,6 +119,7 @@ class ChatService:
     
     async def process_rag_query(self, query_text: str, category: str) -> Dict[str, any]:
         try:
+            self.logger.debug(f'Asking question to model: {self.model_name}')
             chroma_db = self.get_chroma(category)
             results = await asyncio.to_thread(chroma_db.similarity_search_with_score, query_text, k=4)
 
@@ -133,7 +131,8 @@ class ChatService:
             sources = [doc.metadata.get("id", None) for doc, _score in results]
             return {
                 "response": response_text,
-                "sources": sources
+                "sources": sources,
+                # "model": self.model_name
             }
         except Exception as e:
             print(f"Error processing query: {e}")
