@@ -31,6 +31,53 @@
     </section>
 
     <section>
+      <h2>4. Settings</h2>
+      
+      <h3>4.1 Category Management</h3>
+      <p>Manage your document categories:</p>
+      <ul>
+        <li>Add new categories to organize your documents</li>
+        <li>Remove existing categories (warning: this will delete associated documents)</li>
+        <li>Edit category names to better reflect your document structure</li>
+      </ul>
+      
+      <h3>4.2 Model Selection</h3>
+      <p>Choose from the following AI models:</p>
+      <ul>
+        <li>LLaMA 3.1 (8B parameters): Balanced performance and accuracy</li>
+        <li>Qwen2 (1.5B parameters): Faster, but may be less accurate for complex tasks</li>
+        <li>Phi3 (3B parameters): Good balance of speed and capability</li>
+        <li>Gemma2 (2B parameters): Efficient model with strong performance on various tasks</li>
+      </ul>
+      
+      <h3>4.3 Chunk Settings</h3>
+      <p>Adjust how documents are processed:</p>
+      <ul>
+        <li>Chunk Size:
+          <ul>
+            <li>Minimum recommended: 512 or 1024 tokens</li>
+            <li>Smaller chunks: More accurate answers, but slower processing and may miss broader context</li>
+            <li>Larger chunks: Faster processing, but may be less precise for specific queries</li>
+          </ul>
+        </li>
+        <li>Chunk Overlap:
+          <ul>
+            <li>Recommended: 300 tokens</li>
+            <li>Larger overlap: Better context preservation between chunks, but increases processing time</li>
+          </ul>
+        </li>
+      </ul>
+      
+      <h3>4.4 Prompt Settings</h3>
+      <p>Customize the instructions given to the AI model:</p>
+      <ul>
+        <li>Edit the detailed prompt to guide the AI's responses</li>
+        <li>Tailor instructions for specific use cases or query types</li>
+        <li>Fine-tune the AI's tone, style, or focus based on your needs</li>
+      </ul>
+    </section>
+
+    <section>
       <h2>4. Source Code</h2>
       <p>You can find the source code of this application in the following GitHub link:</p>
       <a href="https://github.com/jihoo529/ragstone" target="_blank">https://github.com/jihoo529/ragstone</a>
