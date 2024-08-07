@@ -16,7 +16,7 @@ Ragstone is a powerful, AI-driven solution for processing and responding to Requ
 - **Frontend**: Vue.js
 - **Database**: MongoDB
 - **Web Server**: Nginx
-- **AI Model**: Ollama (llama3.1)
+- **AI Model**: Ollama (llama3.1:8b, gemma2:2b, qwen2:1.5b, phi3:3b)
 - **Vector Database**: ChromaDB
 
 ## Prerequisites
