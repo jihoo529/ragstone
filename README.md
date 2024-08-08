@@ -1,6 +1,8 @@
 # Ragstone
 
-Ragstone is a powerful, AI-driven solution for processing and responding to Request For Information (RFI) and Request For Proposal (RFP) documents. By leveraging Retrieval-Augmented Generation (RAG) technology, Ragstone automates the time-consuming task of searching through technical documents to answer complex RFI & RFP questions.
+Ragstone is a powerful AI-driven solution for processing RFI and RFP documents, leveraging Retrieval-Augmented Generation (RAG) technology to automate complex question answering. What sets Ragstone apart is its commitment to privacy and security.
+
+Utilizing Ollama for private AI implementation, Ragstone operates entirely on local servers, ensuring that all processing and data handling occurs in-house. This means no sensitive information is ever transmitted over the internet or through external APIs, making Ragstone ideal for organizations and individuals who prioritize the confidentiality of their documents and compliance with strict data regulations.
 
 ## Features
 
