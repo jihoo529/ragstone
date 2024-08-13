@@ -11,7 +11,7 @@
       </ul>
       <div class="add-category">
         <input v-model="newCategory" placeholder="New category name" />
-        <button @click="newCategory" class="add-button">+</button>
+        <button @click="addCategory" class="add-button">+</button>
       </div>
     </div>
     <div class="model-settings">
